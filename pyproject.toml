@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "my-abinitio"
+version = "0.1.0"
+description = "MLIP/DFT/TST workflow for SiGeC carbon surface rate constants"
+requires-python = ">=3.9"
+dependencies = []
+
+[project.optional-dependencies]
+atomistics = [
+  "ase",
+  "numpy",
+  "scipy",
+  "matplotlib",
+  "mace-torch",
+]
+ml = [
+  "scikit-learn",
+]
+dev = [
+  "pytest",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]

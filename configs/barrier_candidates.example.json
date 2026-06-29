@@ -1,0 +1,26 @@
+[
+  {
+    "id": "C_sub_clean_Si",
+    "pathway": "C_sub",
+    "environment": {"nearby_Ge": 0, "strain_pct": 0.0, "theta_H": 0.5},
+    "barrier_predictions_ev": [1.18, 1.22, 1.21]
+  },
+  {
+    "id": "C_sub_Ge_neighbor",
+    "pathway": "C_sub",
+    "environment": {"nearby_Ge": 1, "strain_pct": 0.4, "theta_H": 0.5},
+    "barrier_predictions_ev": [1.05, 1.28, 1.19]
+  },
+  {
+    "id": "C_int_clean_Si",
+    "pathway": "C_int",
+    "environment": {"nearby_Ge": 0, "strain_pct": 0.0, "theta_H": 0.5},
+    "barrier_predictions_ev": [0.84, 0.86, 0.85]
+  },
+  {
+    "id": "C_int_high_H",
+    "pathway": "C_int",
+    "environment": {"nearby_Ge": 0, "strain_pct": 0.0, "theta_H": 0.9},
+    "barrier_predictions_ev": [0.72, 1.01, 0.88]
+  }
+]

@@ -1,0 +1,19 @@
+{
+  "temperature_grid_K": [773.15, 798.15, 823.15, 848.15, 873.15, 898.15, 923.15],
+  "pathways": [
+    {
+      "name": "C_sub",
+      "reaction": "C(S)+Si(B)->C_sub+Si(S)",
+      "initial_structure": "structures_subsurface/C_surface_IS.traj",
+      "final_structure": "structures_subsurface/C_sub_FS.traj",
+      "n_images": 11
+    },
+    {
+      "name": "C_int",
+      "reaction": "C(S)->C_int",
+      "initial_structure": "structures_subsurface/C_surface_IS.traj",
+      "final_structure": "structures_subsurface/C_int_FS.traj",
+      "n_images": 9
+    }
+  ]
+}
