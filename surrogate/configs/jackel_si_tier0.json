@@ -1,0 +1,50 @@
+{
+  "description": "Tier 0 base case for the Jackel et al. low-temperature DCS Si epitaxy example and the attached 2D CFD-ACE+ schematic.",
+  "paper": {
+    "title": "Surface chemistry models for low temperature Si epitaxy process simulation in a single-wafer reactor",
+    "doi": "10.1116/6.0003340",
+    "notes": [
+      "DCS is the Si source, H2 is the carrier, pressure is about 300 Torr, and T < 700 C.",
+      "Si process paper flows: main inlet 9000 sccm H2 + 400 sccm DCS; bottom slit 5000 sccm H2; side inlet 400 sccm H2 + about 100 sccm DCS.",
+      "Empirical Si model: GR = K exp(-(Ea/R)/T) (p_HCl/p_DCS)^a_HCl with K=1.2e25 m/s, Ea/R=95559 K, a_HCl=-3.419."
+    ]
+  },
+  "geometry": {
+    "domain_length_m": 0.25,
+    "chamber_height_m": 0.2,
+    "wafer_radius_m": 0.15,
+    "inlet_velocity_m_s": 0.1145,
+    "characteristic_gap_m": 0.2,
+    "mass_transfer_edge_enhancement": 0.18,
+    "mass_transfer_edge_power": 2.0
+  },
+  "process": {
+    "wafer_temperature_C": 650.0,
+    "pressure_Torr": 300.0,
+    "main_h2_sccm": 9000.0,
+    "main_dcs_sccm": 400.0,
+    "bottom_h2_sccm": 5000.0,
+    "side_h2_sccm": 400.0,
+    "side_dcs_sccm": 100.0,
+    "hcl_sccm": 0.0,
+    "ph3_sccm": 0.0,
+    "dcs_surface_center_factor": 0.985,
+    "dcs_surface_edge_factor": 1.0,
+    "hcl_to_dcs_ratio": 0.01,
+    "hcl_to_dcs_edge_multiplier": 0.98
+  },
+  "empirical_si_params": {
+    "K_m_s": 1.2e25,
+    "E_over_R_K": 95559.0,
+    "a_hcl": -3.419,
+    "min_hcl_to_dcs": 1e-6,
+    "max_hcl_to_dcs": 10.0
+  },
+  "calibration": {
+    "target_si_mass_flux_kg_m2_s": 7.285e-8,
+    "radius_fraction": 1.0,
+    "mode": "infer_hcl_to_dcs",
+    "note": "Approximate max |Dep_SI(B)| from the attached CFD-ACE+ screenshot colorbar; replace with exported wafer-average or radial line-probe values when available."
+  },
+  "n_points": 61
+}
