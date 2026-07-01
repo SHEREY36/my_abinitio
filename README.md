@@ -57,6 +57,37 @@ results/toy_kmc.json
 results/ace_surface_rates.c
 ```
 
+## Surrogate Track
+
+The active surrogate work lives in `surrogate/`.  It is now organized as one
+package:
+
+```text
+surrogate/tier0_backbone.py       fast Jackel DCS Si Tier 0 physics model
+surrogate/run_tier0_jackel_si.py  writes the Tier 0 profile and summary
+surrogate/tier1.py                scalar/profile correction of Tier 0
+surrogate/tier2.py                POD-GP full-field surrogate
+surrogate/active.py               active-learning batch selector
+surrogate/runner.py               CFD-ACE+ run-table writer
+surrogate/demo_synthetic.py       end-to-end synthetic ACE+-like demo
+```
+
+Tier 0 is dependency-light:
+
+```bash
+python3 surrogate/run_tier0_jackel_si.py
+```
+
+Tier 1/Tier 2 need the surrogate extras:
+
+```bash
+python -m pip install ".[surrogate]"
+python3 -W ignore surrogate/demo_synthetic.py
+```
+
+See `surrogate/TIER1_TIER2_GUIDE.md` for the ACE+ export format, active
+learning loop, and validation plan.
+
 ## Real Workflow On Cluster/Laptop With Scientific Stack
 
 1. Install optional atomistic tools:
@@ -143,6 +174,7 @@ python scripts/05_make_ace_rates.py --rates results/arrhenius_rates.json
 configs/              input examples
 scripts/              runnable workflow steps
 src/my_abinitio/      reusable library code
+surrogate/            Tier 0/Tier 1/Tier 2 ACE+ surrogate workflow
 tests/                toy validation tests
 results/              generated outputs, ignored by git except .gitkeep
 ```

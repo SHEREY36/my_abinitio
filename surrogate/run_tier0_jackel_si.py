@@ -6,7 +6,10 @@ from __future__ import annotations
 import argparse
 from pathlib import Path
 
-from tier0_backbone import evaluate_config, write_profile_csv, write_result_json
+try:
+    from .tier0_backbone import evaluate_config, write_profile_csv, write_result_json
+except ImportError:  # pragma: no cover - supports `python surrogate/run_tier0_jackel_si.py`
+    from tier0_backbone import evaluate_config, write_profile_csv, write_result_json
 
 
 ROOT = Path(__file__).resolve().parents[1]

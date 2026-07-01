@@ -17,6 +17,11 @@ atomistics = [
   "matplotlib",
   "mace-torch",
 ]
+surrogate = [
+  "numpy",
+  "scipy",
+  "scikit-learn",
+]
 ml = [
   "scikit-learn",
 ]
